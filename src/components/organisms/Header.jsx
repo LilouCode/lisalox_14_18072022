@@ -1,8 +1,10 @@
-import {Nav} from '../molecules/Nav'
+import {Nav} from '../molecules/Nav';
+import {LogoHR} from '../atoms/logo/LogoHRnet';
 export const Header = () => {
     return(
-        <div className="Header">
-            <h1>HEADER</h1>
+        <div className="header">
+            <LogoHR/>
+            <Nav/>
         </div>
     )
 }   
