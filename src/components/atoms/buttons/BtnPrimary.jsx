@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 export const BtnPrimary = ({ text = "Primary" }) => {
   return (
-    <button className="btn btn--primary">{text}</button>
+    <button className="btn">{text}</button>
   );
 };
 BtnPrimary.protoTypes = {
