@@ -1,18 +1,31 @@
-.btn{
-    border-radius: 10px;
-    padding: 10%;
-    color: #040404;
-    &--cta{
-        background-color: #CEF035;
+.btn {
+  border-radius: 10px;
+  padding: 0.5% 1%;
+  color: #040404;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: $color--primary;
+  font-size: 16px;
+  text-decoration: none;
+  &--nav{
+    background-color: transparent;
+    color: $color--primary;
+    &--active{
+        color: lighten($color--primary, 20%);
     }
-    &--primary{
-        background-color: #EBF2C5;
-    }
-    &--ghost{
-        background-color: transparent;
-    }
-    &--disabled{
-        background-color: #E8E8E8;
-    }
-
+  }
+  &--input{
+    width: 100px;
+  }
+  &--cta {
+    background-color: $color--cta;
+    font-weight: $extra-light;
+    border: solid lighten($color--cta, 10%);
+  }
+  &--ghost {
+    background-color: transparent;
+  }
+  &--disabled {
+    background-color: #e8e8e8;
+  }
 }

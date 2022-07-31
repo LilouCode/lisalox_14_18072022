@@ -1,0 +1,17 @@
+.input{
+    background-color: $color--secondary;
+    width: 200px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: white;
+    color: white;
+    padding-left: 15px;
+    margin-top: 5px;
+    &::placeholder{
+        color: white;
+    }
+    &--btn{
+        align-self: center;
+    }
+}

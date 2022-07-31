@@ -1,0 +1,17 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 3%;
+    &__section{
+        display: flex;
+        flex-wrap: wrap;
+        & h4{
+            margin-bottom: 0;
+        }
+        &--border{
+            margin-top: 0;
+            border: solid white 0.1px;
+        }
+    }
+}

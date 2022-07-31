@@ -1,0 +1,9 @@
+.footer{
+    display: flex;
+    justify-content: end;
+    & h6{
+        margin-top: 1%;
+        margin-right: 3%;
+        font-weight: $regular;
+    }
+}
