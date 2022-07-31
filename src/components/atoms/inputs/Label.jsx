@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
-export const Label = ({htmlFor, label}) =>{
+export const Label = ({label, children}) =>{
 return(
-    <label className="label" htmlFor={htmlFor}>{label}</label>
+    <label className="label">{label}{children}</label>
 )
 }
 Label.protoTypes = {
-    label: PropTypes.string.isRequired,
-    htmlFor: PropTypes.string.isRequired
+    label: PropTypes.string.isRequired
   };
