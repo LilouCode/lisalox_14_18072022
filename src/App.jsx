@@ -1,10 +1,13 @@
-import { Outlet } from "react-router-dom"
-import '../src/style/main.scss';
+import { Outlet } from "react-router-dom";
+import { SourceProvider } from "./utils/context";
+import "../src/style/main.scss";
 function App() {
-    return (
-      <div>
-      <Outlet />
-    </div>
-    )
-  }
-  export default App
+  return (
+    <>
+      <SourceProvider>
+        <Outlet />
+      </SourceProvider>
+    </>
+  );
+}
+export default App;

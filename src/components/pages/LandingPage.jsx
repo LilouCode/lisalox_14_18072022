@@ -1,3 +1,5 @@
+// import { ModalLibrary } from "../molecules/ModalLibrary"
+// import { ModalLibrary } from "../molecules/ModalLibrary"
 import { Form } from "../organisms/Form"
 import { PageTemplate } from "../templates/PageTemplate"
 function LandingPage() {
@@ -12,6 +14,9 @@ function LandingPage() {
                     <div className="home__form">
                         <Form/>
                     </div>
+                    {/* <div className="home__modal">
+                        <ModalLibrary/>
+                    </div> */}
                 </div>
             )}/>
         </div>

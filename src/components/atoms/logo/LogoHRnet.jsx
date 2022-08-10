@@ -1,6 +1,8 @@
-import LogoHRnet from '../../../assets/images/LogoHRnet.svg';
 export const LogoHR = () =>{
     return(
-        <img className='logoHRnet' src={LogoHRnet} alt="Logo Wealth Health"/>
-    )
+        <div className="logoText">
+            <h1>HRnet</h1>
+            <h6>Powered by Wealth Health</h6>   
+        </div>
+        )
 }

@@ -1,15 +1,15 @@
 .input{
-    background-color: $color--secondary;
+    background-color: transparent;
     width: 200px;
     height: 30px;
     font-size: 14px;
-    border-radius: 5px;
-    border: white;
-    color: white;
+    border-radius: 2px;
+    border: solid grey 1px;
+    color: $color--soft;
     padding-left: 15px;
     margin-top: 5px;
     &::placeholder{
-        color: white;
+        color: $color--primary;
     }
     &--btn{
         align-self: center;

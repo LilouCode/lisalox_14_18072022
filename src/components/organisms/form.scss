@@ -3,6 +3,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: 3%;
+    background-color: transparent;
     &__section{
         display: flex;
         flex-wrap: wrap;
@@ -13,5 +14,8 @@
             margin-top: 0;
             border: solid white 0.1px;
         }
+    }
+    &__error{
+        color: red;
     }
 }
