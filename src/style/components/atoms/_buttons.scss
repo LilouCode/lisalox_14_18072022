@@ -11,7 +11,7 @@
     background-color: transparent;
     color: $color--primary;
     &--active{
-        color: lighten($color--primary, 20%);
+        color: $color--primary;
     }
   }
   &--input{
@@ -21,6 +21,7 @@
     background-color: $color--cta;
     font-weight: $extra-light;
     border: solid lighten($color--cta, 10%);
+    width: 80px;
   }
   &--ghost {
     background-color: transparent;

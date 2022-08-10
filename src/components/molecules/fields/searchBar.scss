@@ -1,0 +1,18 @@
+.searchBar{
+    display: flex;
+    flex-direction: column;
+    &__message{
+        display: flex;
+        & button{
+            padding: 0;
+            height: 20px;
+            margin-left: 2%;
+            align-self: center;
+            border-radius:100px ;
+            border: solid 0.5px red;
+            padding: 1px 5px;
+            cursor: pointer;
+
+        }
+    }
+}

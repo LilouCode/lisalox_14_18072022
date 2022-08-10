@@ -21,6 +21,7 @@ import { visuallyHidden } from "@mui/utils";
 
 import { useSource} from "../../utils/hooks";
 import { getComparator } from "../../utils/helpers";
+import { SearchBar } from "../molecules/fields/SearchBar";
 
 const headCells = [
   {
@@ -164,20 +165,7 @@ const EnhancedTableToolbar = (props) => {
           Employee List
         </Typography>
       )}
-
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
-      )}
+      <SearchBar/>
     </Toolbar>
   );
 };
