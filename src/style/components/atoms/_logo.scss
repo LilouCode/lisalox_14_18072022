@@ -3,5 +3,21 @@
     object-fit: cover;
 }
 .logoHRnet{
-    height: 80px;
+    height: 40px;
+    // width: 40px;
+    object-fit: cover;
+}
+.logoText{
+    display: flex;
+    flex-direction: column;
+    & h1{
+        margin: 0;
+        font-size: 60px;
+    }
+    & h6{
+        margin-bottom: 10px;
+        margin-top: -15px;
+        text-align: end;
+        color: $color--primary;
+    }
 }
