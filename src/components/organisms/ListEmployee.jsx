@@ -176,7 +176,7 @@ EnhancedTableToolbar.propTypes = {
 
 export const ListEmployee = () => {
   const {source, filtredSource} = useSource();
-  const rows = (filtredSource.length) > 0 ? filtredSource : source;
+  const rows = (filtredSource.length) >= 0 ? filtredSource : source;
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("ZipCode");
   const [selected, setSelected] = React.useState([]);
