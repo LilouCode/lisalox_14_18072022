@@ -1,6 +1,11 @@
 .searchBar{
+    border-bottom: solid 0.2px black;
+    padding: 2% 4% 3% 4%;
     display: flex;
     flex-direction: column;
+    & input:hover{
+        background-color: darken($color: white, $amount: 2%);
+    }
     &__message{
         display: flex;
         & button{

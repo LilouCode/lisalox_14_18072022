@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { alpha } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -13,12 +14,7 @@ import TableSortLabel from "@mui/material/TableSortLabel";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import DeleteIcon from "@mui/icons-material/Delete";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
-
 import { useSource} from "../../utils/hooks";
 import { getComparator } from "../../utils/helpers";
 import { SearchBar } from "../molecules/fields/SearchBar";
@@ -175,7 +171,7 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export const ListEmployee = () => {
-  const {source, filtredSource} = useSource();
+  const {source, filtredSource, cleanFilter} = useSource();
   const rows = (filtredSource.length) >= 0 ? filtredSource : source;
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("ZipCode");
@@ -183,23 +179,27 @@ export const ListEmployee = () => {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  
+  //Clean each time we come back:
+  useEffect(()=>{
+    cleanFilter()
+  },[]) //just once
 
+  //Sorts
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
-
+  // Change page
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
-
+  //Change number of rows per page
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
-  // const isSelected = (FirstName) => selected.indexOf(FirstName) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =

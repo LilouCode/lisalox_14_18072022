@@ -21,7 +21,6 @@ export const SourceContext = React.createContext();
 export const SourceProvider = ({ children }) => {
   const [source, setSource] = useState(list);
   const [filtredSource, setFiltredSource] = useState(source);
-  const [rowsSource, setRows] = useState(source);
   const addSource = (payload) => {
     const dateBirth = new Date(payload.BirthDate).toLocaleDateString("en-CA");
     const dateStart = new Date(payload.StartDate).toLocaleDateString("en-CA");
@@ -32,7 +31,7 @@ export const SourceProvider = ({ children }) => {
       dateStart,
       payload.Street,
       payload.City,
-      payload.States,
+      payload.State,
       payload.ZipCode,
       payload.Department
     );
@@ -48,21 +47,19 @@ export const SourceProvider = ({ children }) => {
         e.City.toLowerCase().includes(payload) ||
         e.Department.toLowerCase().includes(payload) ||
         e.Street.toLowerCase().includes(payload) ||
-        e.BirthDate.toLowerCase().includes(payload)
+        e.BirthDate.toLowerCase().includes(payload)||
+        e.State.toLowerCase().includes(payload)
     );
    
     setFiltredSource(data)
     console.log(data)
     console.log('result ', filtredSource)
   };
-  const refreshRows = () => {
-    setRows(source)
-  }
-  const filterRows = () =>{
-    setRows(filtredSource)
+  const cleanFilter = () => {
+    setFiltredSource(source)
   }
   return (
-    <SourceContext.Provider value={{ source, filtredSource, addSource, searchSource, rowsSource, refreshRows, filterRows }}>
+    <SourceContext.Provider value={{ source, filtredSource, addSource, searchSource, cleanFilter}}>
       {children}
     </SourceContext.Provider>
   );

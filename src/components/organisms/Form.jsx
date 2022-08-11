@@ -9,6 +9,8 @@ import { ModalLibrary } from "../molecules/ModalLibrary";
 import { useSource } from "../../utils/hooks";
 import { ParagraphError } from "../atoms/inputs/ParagraphError";
 import DatePicker from "react-datepicker";
+import { Select } from '@mui/material';
+import MenuItem from '@mui/material/MenuItem';
 import "react-datepicker/dist/react-datepicker.css";
 
 const schema = yup.object().shape({
@@ -182,18 +184,18 @@ export const Form = () => {
           </div>
 
           <div className="field">
-            <label className="label" htmlFor="State">
+            <label id="State" className="label" htmlFor="State">
               State
             </label>
-            <select name="State" id="State" {...register("State")}>
+            <Select className="input" name="State" labelId="State" defaultValue="" {...register("State")}>
               {states?.map((state) => {
                 return (
-                  <option key={state.value} value={state.label}>
+                  <MenuItem key={state.value} value={state.label}>
                     {state.label}
-                  </option>
+                  </MenuItem>
                 );
               })}
-            </select>
+            </Select>
             <ParagraphError error={errors.State?.message} />
           </div>
 
@@ -214,18 +216,18 @@ export const Form = () => {
         </section>
 
         <div className="field">
-          <label className="label" htmlFor="Department">
+          <label id="Department" className="label" htmlFor="Department">
             Department
           </label>
-          <select name="Department" id="Department" {...register("Department")}>
+          <Select className="input" name="Department" labelId="Department" defaultValue="" {...register("Department")}>
             {Departments?.map((department) => {
               return (
-                <option key={department.value} value={department.label}>
+                <MenuItem key={department.value} value={department.label}>
                   {department.label}
-                </option>
+                </MenuItem>
               );
             })}
-          </select>
+          </Select>
           <ParagraphError error={errors.Department?.message} />
         </div>
 

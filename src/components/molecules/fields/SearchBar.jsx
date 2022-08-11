@@ -1,33 +1,20 @@
 import { useSource } from "../../../utils/hooks";
-import { useState, useRef } from "react";
+import { useRef} from "react";
 import './searchBar.scss';
 
 export const SearchBar = () => {
-  const { searchSource } = useSource();
-  const [searchString, setSearch] = useState("");
-
+  const { searchSource} = useSource(); 
+  
   function handleChange(event) {
-    setSearch(event.target.value.toLowerCase());
-    searchSource(event.target.value.toLowerCase());
+    searchSource(event.target.value.toLowerCase()); //filter the source
   }
   
   const inputRef = useRef(null);
   
-  const onButtonClick = () => {
-    inputRef.current.value = "";
-    setSearch("");
-    searchSource('');
-  };
-  
   return (
     <div className="searchBar">
-      <input aria-label="search an employee" ref={inputRef} id="search" className="input" onChange={handleChange} />
-      {searchString.length >= 1 ? (
-        <div className="searchBar__message">
-        <p> Looking for "{searchString}"</p>
-        <button onClick={onButtonClick}>X</button>
-        </div>
-      ) : null}
+      <label className="label">Search</label>
+      <input aria-label="search an employee" placeholder="Type your search here..." ref={inputRef} id="search" className="input" onChange={handleChange} />
     </div>
   );
 };
